@@ -1,0 +1,179 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2639
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 <!DOCTYPE html>\
+<html lang="en">\
+\
+<head>\
+    <meta charset="UTF-8">\
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\
+    <title>Your Photo Scrapbook</title>\
+    <style>\
+        /* Basic styling */\
+        body \{\
+            font-family: Arial, sans-serif;\
+            line-height: 1.6;\
+            margin: 0;\
+            padding: 0;\
+            background-color: #f2f2f2;\
+            color: #333;\
+        \}\
+\
+        header \{\
+            background-color: #333;\
+            color: #fff;\
+            padding: 1rem;\
+            text-align: center;\
+        \}\
+\
+        .container \{\
+            display: grid;\
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));\
+            gap: 20px;\
+            padding: 20px;\
+            justify-items: center;\
+        \}\
+\
+        .photo \{\
+            position: relative;\
+            overflow: hidden;\
+            border-radius: 10px;\
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);\
+            transition: transform 0.3s ease;\
+        \}\
+\
+        .photo img \{\
+            width: 100%;\
+            height: auto;\
+            display: block;\
+            border-radius: 10px;\
+        \}\
+\
+        .photo:hover \{\
+            transform: scale(1.05);\
+        \}\
+\
+        .photo.overlay::after \{\
+            content: '';\
+            position: absolute;\
+            top: 0;\
+            left: 0;\
+            width: 100%;\
+            height: 100%;\
+            background: rgba(0, 0, 0, 0.6);\
+            opacity: 0;\
+            transition: opacity 0.3s ease;\
+        \}\
+\
+        .photo.overlay:hover::after \{\
+            opacity: 0.7;\
+        \}\
+\
+        .photo.overlay img \{\
+            transition: transform 0.3s ease;\
+        \}\
+\
+        .photo.overlay:hover img \{\
+            transform: scale(1.1);\
+        \}\
+\
+        footer \{\
+            text-align: center;\
+            padding: 1rem;\
+            background-color: #333;\
+            color: #fff;\
+            position: fixed;\
+            bottom: 0;\
+            width: 100%;\
+            display: flex;\
+            justify-content: space-between;\
+            align-items: center;\
+        \}\
+\
+        .social-icons a \{\
+            color: #fff;\
+            text-decoration: none;\
+            font-size: 1.5rem;\
+            margin-right: 10px;\
+            transition: color 0.3s ease;\
+        \}\
+\
+        .social-icons a:hover \{\
+            color: #f00; /* Change color on hover if needed */\
+        \}\
+\
+        /* Responsive adjustments */\
+        @media (max-width: 768px) \{\
+            .container \{\
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));\
+            \}\
+        \}\
+    </style>\
+</head>\
+\
+<body>\
+\
+    <header>\
+        <h1>Your Photo Scrapbook</h1>\
+        <p>Click on a photo to enlarge!</p>\
+    </header>\
+\
+    <div class="container">\
+        <!-- Replace these image sources with your own photos -->\
+        <div class="photo overlay">\
+            <img src="https://via.placeholder.com/400x400" alt="Photo 1">\
+        </div>\
+        <div class="photo overlay">\
+            <img src="https://via.placeholder.com/400x600" alt="Photo 2">\
+        </div>\
+        <div class="photo overlay">\
+            <img src="https://via.placeholder.com/600x400" alt="Photo 3">\
+        </div>\
+        <div class="photo overlay">\
+            <img src="https://via.placeholder.com/300x500" alt="Photo 4">\
+        </div>\
+        <div class="photo overlay">\
+            <img src="https://via.placeholder.com/500x500" alt="Photo 5">\
+        </div>\
+        <div class="photo overlay">\
+            <img src="https://via.placeholder.com/500x300" alt="Photo 6">\
+        </div>\
+    </div>\
+\
+    <footer>\
+        <div class="social-icons">\
+            <a href="https://example.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>\
+            <a href="https://example.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>\
+            <a href="https://example.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>\
+        </div>\
+        <p>&copy; 2024 Your Name. All rights reserved.</p>\
+    </footer>\
+\
+    <script>\
+        // Adding click event listener to each photo to handle enlargement and bounce effect\
+        const photos = document.querySelectorAll('.photo.overlay');\
+\
+        photos.forEach(photo => \{\
+            photo.addEventListener('click', function () \{\
+                // Enlarge the clicked photo\
+                this.classList.toggle('enlarged');\
+\
+                // Add bounce animation effect\
+                if (this.classList.contains('enlarged')) \{\
+                    this.style.animation = 'bounce 0.5s ease';\
+                    setTimeout(() => \{\
+                        this.style.animation = '';\
+                    \}, 500);\
+                \}\
+            \});\
+        \});\
+    </script>\
+\
+</body>\
+\
+</html>\
+}
